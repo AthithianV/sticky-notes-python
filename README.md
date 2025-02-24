@@ -1,4 +1,4 @@
-### Backend (FastAPI)
+# Backend (FastAPI)
 
 1. Clone the Repository
 
@@ -30,7 +30,7 @@ pip install -r requirements.txt
    ```
 5. Run Application `uvicorn main:app --host 127.0.0.1 --port 8000 --reload`
 
-### Frontend (React)
+# Frontend (React)
 
 1. After Cloning the repository, Change to `Frontend` directory.
 2. Install Dependencies `npm install`.
