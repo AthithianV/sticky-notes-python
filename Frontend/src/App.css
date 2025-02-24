@@ -6,3 +6,21 @@
     --navbar-height: 7vh;
     --body-height: 93vh;
 }
+
+@layer{
+    .auth-form{
+        @apply flex flex-col gap-4 p-5 shadow border-black rounded-lg bg-white
+    }
+
+    .input{
+        @apply p-2 border
+    }
+
+    .flex-center{
+        @apply flex justify-center items-center
+    }
+
+    .btn{
+        /* @apply */
+    }
+}

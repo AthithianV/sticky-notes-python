@@ -16,6 +16,16 @@ auth_router = APIRouter()
 @auth_router.post("/register")
 def register(user: UserCreate, db: Session = Depends(get_db)):
 
+    # Check if username already exists
+    existing_user_name = db.query(User).filter(User.user_name == user.username).first()
+    if existing_user_name:
+        raise HTTPException(status_code=400, detail="Username already taken")
+
+    # Check if email already exists
+    existing_user_email = db.query(User).filter(User.user_email == user.email).first()
+    if existing_user_email:
+        raise HTTPException(status_code=400, detail="Email already registered")
+
     hashed_password = pwd_context.hash(user.password)
     db_user = User(user_name=user.username, user_email=user.email, password=hashed_password)
     db.add(db_user)
