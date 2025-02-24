@@ -21,6 +21,7 @@ class Note(Base):
     note_id = Column(Integer, primary_key=True, index=True)
     note_title = Column(String(25), nullable=False)
     note_content = Column(String(1000), nullable=True)
+    color = Column(String(6), default="000000")
     user_id = Column(Integer, ForeignKey('users.user_id'), nullable=False)
     user = relationship("User", back_populates="notes")
     last_update = Column(Date, nullable=True)
